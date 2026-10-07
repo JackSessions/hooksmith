@@ -1,0 +1,14 @@
+{
+  "verdict": "PROVEN",
+  "reason": "observed 16-byte key equals a static constant in the class (string)",
+  "signal": {
+    "observed_keys": [
+      "30313233343536373839616263646566"
+    ],
+    "calls": 2,
+    "matched_constant": {
+      "origin": "string",
+      "hex": "30313233343536373839616263646566"
+    }
+  }
+}

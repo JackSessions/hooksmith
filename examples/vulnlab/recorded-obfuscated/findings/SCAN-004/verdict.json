@@ -1,0 +1,16 @@
+{
+  "verdict": "PROVEN",
+  "reason": "observed cleartext request to http://example.com/profile",
+  "signal": {
+    "urls": [
+      "http://example.com/profile",
+      "https://example.com/",
+      "http://example.com/profile",
+      "https://example.com/"
+    ],
+    "cleartext": [
+      "http://example.com/profile",
+      "http://example.com/profile"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "verdict": "PROVEN",
+  "reason": "accepted a self-signed certificate chain for CN=*.badssl.com,O=BadSSL,L=San Francisco,ST=California,C=US",
+  "signal": {
+    "chains": 2,
+    "accepted_invalid": 2,
+    "rejected": 0,
+    "example": "CN=*.badssl.com,O=BadSSL,L=San Francisco,ST=California,C=US"
+  }
+}

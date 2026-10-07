@@ -1,0 +1,54 @@
+{
+  "app_name": "DemoVault",
+  "package_name": "com.demo.vault",
+  "code_analysis": {
+    "findings": {
+      "android_hardcoded": {
+        "files": {
+          "com/demo/vault/Crypto.java": "5",
+          "com/demo/vault/SessionCrypto.java": "11",
+          "com/demo/vault/PinStore.java": "5"
+        },
+        "metadata": {
+          "description": "Files may contain hardcoded sensitive information like usernames, passwords, keys etc.",
+          "severity": "warning",
+          "cwe": "CWE-312"
+        }
+      },
+      "android_insecure_random": {
+        "files": {
+          "com/demo/auth/TokenGen.java": "7",
+          "com/demo/auth/Cosmetics.java": "6",
+          "com/demo/auth/PromoRotator.java": "6"
+        },
+        "metadata": {
+          "description": "The App uses an insecure Random Number Generator.",
+          "severity": "warning",
+          "cwe": "CWE-330"
+        }
+      },
+      "android_cleartext_http": {
+        "files": {
+          "com/demo/net/LegacyApi.java": "7",
+          "com/demo/net/ProfileClient.java": "10"
+        },
+        "metadata": {
+          "description": "App uses cleartext HTTP traffic and may expose data over insecure connections.",
+          "severity": "high",
+          "cwe": "CWE-319"
+        }
+      },
+      "android_hardcoded_jni": {
+        "files": {
+          "com/demo/jni/NativeCrypto.java": "9",
+          "com/demo/ghost/Vanished.java": "3"
+        },
+        "metadata": {
+          "description": "Hardcoded encryption key suspected in native bridge.",
+          "severity": "high",
+          "cwe": "CWE-321"
+        }
+      }
+    }
+  }
+}

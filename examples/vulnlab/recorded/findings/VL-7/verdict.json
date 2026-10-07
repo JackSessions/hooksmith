@@ -1,0 +1,11 @@
+{
+  "verdict": "REFUTED",
+  "reason": "every observed URL used https or a loopback host: https://example.com/, https://example.com/",
+  "signal": {
+    "urls": [
+      "https://example.com/",
+      "https://example.com/"
+    ],
+    "cleartext": []
+  }
+}

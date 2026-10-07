@@ -1,0 +1,92 @@
+{
+  "findings": [
+    {
+      "id": "VL-1",
+      "title": "Hardcoded AES key",
+      "type": "hardcoded_key",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.Crypto",
+      "method": "encrypt"
+    },
+    {
+      "id": "VL-2",
+      "title": "Hardcoded AES key (session)",
+      "type": "hardcoded_key",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.SessionCrypto",
+      "method": "seal"
+    },
+    {
+      "id": "VL-3",
+      "title": "Hardcoded legacy key",
+      "type": "hardcoded_key",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.DeadCode",
+      "method": "hiddenKey"
+    },
+    {
+      "id": "VL-4",
+      "title": "Insecure RNG for session token",
+      "type": "insecure_random",
+      "severity": "medium",
+      "class": "com.hooksmith.vulnlab.TokenGen",
+      "method": "newSessionToken"
+    },
+    {
+      "id": "VL-5",
+      "title": "Insecure RNG",
+      "type": "insecure_random",
+      "severity": "medium",
+      "class": "com.hooksmith.vulnlab.Cosmetics",
+      "method": "pickConfettiColor"
+    },
+    {
+      "id": "VL-6",
+      "title": "Cleartext HTTP traffic",
+      "type": "cleartext_http",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.Api",
+      "method": "fetch"
+    },
+    {
+      "id": "VL-7",
+      "title": "Cleartext HTTP traffic",
+      "type": "cleartext_http",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.SafeApi",
+      "method": "fetch"
+    },
+    {
+      "id": "VL-8",
+      "title": "TrustManager accepts any certificate",
+      "type": "tls_trust_all",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.TrustAllManager",
+      "method": "checkServerTrusted"
+    },
+    {
+      "id": "VL-9",
+      "title": "TrustManager (platform delegate)",
+      "type": "tls_trust_all",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.StrictTrustManager",
+      "method": "checkServerTrusted"
+    },
+    {
+      "id": "VL-10",
+      "title": "HostnameVerifier allows any hostname",
+      "type": "hostname_verifier",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.AllowAllVerifier",
+      "method": "verify"
+    },
+    {
+      "id": "VL-11",
+      "title": "HostnameVerifier (platform default)",
+      "type": "hostname_verifier",
+      "severity": "high",
+      "class": "com.hooksmith.vulnlab.StrictVerifier",
+      "method": "verify"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "run_id": "run-20261006-220051",
+  "started": "2026-10-06T22:00:51+00:00",
+  "tool": "hooksmith 0.1.0",
+  "python": "3.11.16",
+  "package": "owasp.mstg.uncrackable1",
+  "apk": {
+    "name": "UnCrackable-Level1.apk",
+    "sha256": "1da8bf57d266109f9a07c01bf7111a1975ce01f190b9d914bcd3ae3dbef96f21"
+  },
+  "provider": "template",
+  "model": "template",
+  "temperature": 0.0,
+  "prompt_hash": "aeb3e7c164e2",
+  "device": {
+    "executor": "avd",
+    "serial": "emulator-5554",
+    "model": "sdk_gphone64_x86_64",
+    "android": "13",
+    "sdk": "33",
+    "abi": "x86_64",
+    "rooted": true,
+    "frida": "17.22.2"
+  },
+  "timeout_s": 60,
+  "findings": 1,
+  "finished": "2026-10-06T22:02:20+00:00",
+  "seconds": 32.2
+}

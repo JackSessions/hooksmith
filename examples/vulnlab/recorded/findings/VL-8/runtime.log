@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"tls_chain","accepted":true,"subject":"CN=*.badssl.com,O=BadSSL,L=San Francisco,ST=California,C=US","issuer":"CN=*.badssl.com,O=BadSSL,L=San Francisco,ST=California,C=US","self_signed":true,"expired":false,"chain_len":1}
+HS|{"event":"call"}
+HS|{"event":"tls_chain","accepted":true,"subject":"CN=*.badssl.com,O=BadSSL,L=San Francisco,ST=California,C=US","issuer":"CN=*.badssl.com,O=BadSSL,L=San Francisco,ST=California,C=US","self_signed":true,"expired":false,"chain_len":1}

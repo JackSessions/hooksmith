@@ -1,0 +1,7 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"746f7020736563726574","via":"argument"}
+HS|{"event":"key","hex":"30313233343536373839616263646566","algorithm":"AES"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"746f7020736563726574","via":"argument"}
+HS|{"event":"key","hex":"30313233343536373839616263646566","algorithm":"AES"}

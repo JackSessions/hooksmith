@@ -1,0 +1,13 @@
+{
+  // HookSmith generation Worker: receives decompiled Java, calls Workers AI, returns a candidate Frida hook.
+  // Set the shared secret once:  npx wrangler secret put HOOKSMITH_TOKEN
+  "name": "hooksmith",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-01",
+  "ai": { "binding": "AI" },
+  "vars": {
+    "MODEL": "@cf/qwen/qwen1.5-14b-chat-awq",
+    "MAX_SOURCE_CHARS": "20000"
+  },
+  "observability": { "enabled": true }
+}

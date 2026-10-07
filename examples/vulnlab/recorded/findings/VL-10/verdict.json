@@ -1,0 +1,11 @@
+{
+  "verdict": "PROVEN",
+  "reason": "returned true for wrong.host.badssl.com, which the server certificate does not cover",
+  "signal": {
+    "checks": 2,
+    "mismatched_hosts": 2,
+    "hosts": [
+      "wrong.host.badssl.com"
+    ]
+  }
+}

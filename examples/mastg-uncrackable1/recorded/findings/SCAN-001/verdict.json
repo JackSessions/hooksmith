@@ -1,0 +1,15 @@
+{
+  "verdict": "PROVEN",
+  "reason": "observed 16-byte key equals a static constant in sg/vantagepoint/uncrackable1/a.java (hex), which calls the hooked method",
+  "signal": {
+    "observed_keys": [
+      "8d127684cbc37c17616d806cf50473cc"
+    ],
+    "calls": 1,
+    "matched_constant": {
+      "origin": "hex",
+      "hex": "8d127684cbc37c17616d806cf50473cc",
+      "file": "sg/vantagepoint/uncrackable1/a.java"
+    }
+  }
+}

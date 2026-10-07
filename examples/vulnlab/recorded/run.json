@@ -1,0 +1,29 @@
+{
+  "run_id": "run-20261006-055955",
+  "started": "2026-10-06T05:59:55+00:00",
+  "tool": "hooksmith 0.1.0",
+  "python": "3.11.16",
+  "package": "com.hooksmith.vulnlab",
+  "apk": {
+    "name": "vulnlab.apk",
+    "sha256": "c9cf417b2d78a2740bf983b8501df8f2c08057e6edefded0a33729be15660012"
+  },
+  "provider": "template",
+  "model": "template",
+  "temperature": 0.0,
+  "prompt_hash": "aeb3e7c164e2",
+  "device": {
+    "executor": "avd",
+    "serial": "emulator-5554",
+    "model": "sdk_gphone64_x86_64",
+    "android": "13",
+    "sdk": "33",
+    "abi": "x86_64",
+    "rooted": true,
+    "frida": "17.22.2"
+  },
+  "timeout_s": 50,
+  "findings": 11,
+  "finished": "2026-10-06T06:03:34+00:00",
+  "seconds": 168.5
+}

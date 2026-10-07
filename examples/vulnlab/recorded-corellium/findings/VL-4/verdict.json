@@ -1,0 +1,10 @@
+{
+  "verdict": "PROVEN",
+  "reason": "java.util.Random observed in a security-relevant method context",
+  "signal": {
+    "impls": [
+      "java.util.Random"
+    ],
+    "security_context": true
+  }
+}

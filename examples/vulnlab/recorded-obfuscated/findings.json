@@ -1,0 +1,70 @@
+{
+  "findings": [
+    {
+      "id": "SCAN-001",
+      "title": "Possible hardcoded cryptographic key",
+      "type": "hardcoded_key",
+      "severity": "high",
+      "description": "Pattern match in com/hooksmith/vulnlab/MainActivity.java; confirm at runtime before reporting.",
+      "class": "com.hooksmith.vulnlab.MainActivity",
+      "method": "work",
+      "file": "com/hooksmith/vulnlab/MainActivity.java",
+      "source": "hooksmith-scan"
+    },
+    {
+      "id": "SCAN-002",
+      "title": "Possible insecure random number generation",
+      "type": "insecure_random",
+      "severity": "medium",
+      "description": "Pattern match in com/hooksmith/vulnlab/MainActivity.java; confirm at runtime before reporting.",
+      "class": "com.hooksmith.vulnlab.MainActivity",
+      "method": "work",
+      "file": "com/hooksmith/vulnlab/MainActivity.java",
+      "source": "hooksmith-scan"
+    },
+    {
+      "id": "SCAN-003",
+      "title": "HostnameVerifier that may accept any hostname",
+      "type": "hostname_verifier",
+      "severity": "critical",
+      "description": "Pattern match in defpackage/a.java; confirm at runtime before reporting.",
+      "class": "defpackage.a",
+      "method": "verify",
+      "file": "defpackage/a.java",
+      "source": "hooksmith-scan"
+    },
+    {
+      "id": "SCAN-004",
+      "title": "Possible cleartext HTTP traffic",
+      "type": "cleartext_http",
+      "severity": "high",
+      "description": "Pattern match in defpackage/b.java; confirm at runtime before reporting.",
+      "class": "defpackage.b",
+      "method": "a",
+      "file": "defpackage/b.java",
+      "source": "hooksmith-scan"
+    },
+    {
+      "id": "SCAN-005",
+      "title": "TrustManager that may not validate certificate chains",
+      "type": "tls_trust_all",
+      "severity": "critical",
+      "description": "Pattern match in defpackage/d.java; confirm at runtime before reporting.",
+      "class": "defpackage.d",
+      "method": "checkServerTrusted",
+      "file": "defpackage/d.java",
+      "source": "hooksmith-scan"
+    },
+    {
+      "id": "SCAN-006",
+      "title": "TrustManager that may not validate certificate chains",
+      "type": "tls_trust_all",
+      "severity": "critical",
+      "description": "Pattern match in defpackage/e.java; confirm at runtime before reporting.",
+      "class": "defpackage.e",
+      "method": "checkServerTrusted",
+      "file": "defpackage/e.java",
+      "source": "hooksmith-scan"
+    }
+  ]
+}

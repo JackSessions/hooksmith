@@ -1,0 +1,33 @@
+# GitHub Actions: runtime-validate your own app's static findings on every release build.
+# Needs a KVM-capable runner (ubuntu-latest has /dev/kvm) and your scanner's JSON report.
+name: hooksmith
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+      - run: uv sync --extra device   # in a checkout of hooksmith (or: pip install hooksmith)
+      - run: uv run hooksmith avd setup
+      - name: Prove or Delete
+        env:
+          HOOKSMITH_WORKER_URL: ${{ secrets.HOOKSMITH_WORKER_URL }}
+          HOOKSMITH_WORKER_TOKEN: ${{ secrets.HOOKSMITH_WORKER_TOKEN }}
+        run: |
+          uv run hooksmith run --report mobsf.json --apk app-release.apk \
+            --executor avd --provider worker \
+            --fail-on PROVEN:high --max-unvalidated 5
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hooksmith-evidence
+          path: runs/

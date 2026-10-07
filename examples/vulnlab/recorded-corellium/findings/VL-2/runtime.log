@@ -1,0 +1,13 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"746f7020736563726574","via":"argument"}
+HS|{"event":"key","hex":"5c9b95d780a73c2b27b6ed735bebde4a","algorithm":"AES"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"746f7020736563726574","via":"argument"}
+HS|{"event":"key","hex":"587ec51918e10961b6e80ae2f4907b51","algorithm":"AES"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"746f7020736563726574","via":"argument"}
+HS|{"event":"key","hex":"52f2e79b49625502c97f23d4cde366fe","algorithm":"AES"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"746f7020736563726574","via":"argument"}
+HS|{"event":"key","hex":"2ee76b11486e159d33f356d24c81e312","algorithm":"AES"}

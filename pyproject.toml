@@ -1,0 +1,47 @@
+[project]
+name = "hooksmith"
+version = "0.1.0"
+description = "Prove or Delete: give every static mobile finding a runtime verdict."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Jack Sessions" }]
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.5.0",
+    "esprima>=4.0.1",
+    "httpx>=0.28.1",
+    "langgraph>=1.2.13",
+    "pydantic>=2.13.5",
+    "pyfiglet>=1.0.4",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+hooksmith = "hooksmith.cli:main"
+
+[project.optional-dependencies]
+device = [
+    "frida>=17.22.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["UP042", "E501", "UP017", "B905", "UP035", "UP037", "E731"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

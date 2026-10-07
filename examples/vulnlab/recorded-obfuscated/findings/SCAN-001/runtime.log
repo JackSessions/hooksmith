@@ -1,0 +1,9 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"30313233343536373839616263646566","algorithm":"AES"}
+HS|{"event":"key","hex":"bf088e35364f3adcc9eb74cb93ecc8ed","algorithm":"AES"}
+HS|{"event":"key","hex":"59960af63a2a0f475effc7b5a63a49a3","algorithm":"AES"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"30313233343536373839616263646566","algorithm":"AES"}
+HS|{"event":"key","hex":"1d0ec243f7bb5d7a61865f4e2e96e225","algorithm":"AES"}
+HS|{"event":"key","hex":"ca5945b57240e3f532c7fa7f4228a5e9","algorithm":"AES"}

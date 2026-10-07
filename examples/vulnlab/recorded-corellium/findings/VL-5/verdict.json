@@ -1,0 +1,10 @@
+{
+  "verdict": "REFUTED",
+  "reason": "java.util.Random observed but not in a security-relevant context (no token/key/session/etc. involved)",
+  "signal": {
+    "impls": [
+      "java.util.Random"
+    ],
+    "security_context": false
+  }
+}

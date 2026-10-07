@@ -1,0 +1,33 @@
+Finding type: insecure random number generation.
+Claim to test: the target method uses java.util.Random or Math.random for something security relevant (tokens, keys, IVs, nonces, passwords, sessions).
+Evidence to log: which RNG is used while the target method runs. Hook java.util.Random.nextInt/nextLong/nextBytes/nextDouble (all overloads, via .overloads.forEach) and java.security.SecureRandom.nextBytes, and ONLY while the target method is executing (flag set on entry, cleared in a finally block on exit) log:
+    console.log("HS|" + JSON.stringify({event: "random", impl: "java.util.Random", context: "<name of the target method>"}));
+Use impl "java.security.SecureRandom" for SecureRandom. Always call the originals unchanged.
+
+Example of a CORRECT hook for a DIFFERENT class (com.example.Foo.bar(String)). Copy its structure, its logging protocol and its use of the original implementation, but use the class, method and overload you were given, not these names:
+```javascript
+function hex(b){var s='';for(var i=0;i<b.length;i++){s+=('0'+(b[i]&0xff).toString(16)).slice(-2);}return s;}
+Java.perform(function () {
+  var C = Java.use("com.example.Foo");
+  var inTarget = 0;
+  var R = Java.use("java.util.Random");
+  ['nextInt', 'nextLong', 'nextBytes', 'nextDouble'].forEach(function (n) {
+    if (!R[n]) return;
+    R[n].overloads.forEach(function (ov2) {
+      ov2.implementation = function () {
+        if (inTarget > 0) { try { var impl = (String(this.getClass().getName()).indexOf('SecureRandom') !== -1) ? 'java.security.SecureRandom' : 'java.util.Random'; console.log("HS|" + JSON.stringify({event: "random", impl: impl, context: "bar"})); } catch (e) {} }
+        return ov2.apply(this, arguments);
+      };
+    });
+  });
+  C.bar.overload('java.lang.String').implementation = function () {
+    inTarget++;
+    try {
+      console.log("HS|" + JSON.stringify({event: "call"}));
+      var r = this.bar.apply(this, arguments);
+      return r;
+    } finally { inTarget--; }
+  };
+  console.log("HS|" + JSON.stringify({event: "ready"}));
+});
+```

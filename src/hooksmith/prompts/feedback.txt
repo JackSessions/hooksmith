@@ -1,0 +1,9 @@
+
+Your previous hook was rejected by the static validator. Fix every problem and output a complete corrected hook.
+Problems found:
+{{errors}}
+
+Previous hook:
+```javascript
+{{previous}}
+```

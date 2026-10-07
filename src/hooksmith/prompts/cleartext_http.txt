@@ -1,0 +1,21 @@
+Finding type: cleartext HTTP transport.
+Claim to test: the target method sends or builds a request to an http:// URL.
+Evidence to log: every URL the method touches, whether it arrives as an argument (String, java.net.URL, okhttp3.HttpUrl, Request) or is built inside. Log each as:
+    console.log("HS|" + JSON.stringify({event: "url", url: String(value)}));
+Call .toString() on non-String arguments inside try/catch. Log the URL BEFORE calling the original implementation so it is captured even if the call throws.
+
+Example of a CORRECT hook for a DIFFERENT class (com.example.Foo.bar(String)). Copy its structure, its logging protocol and its use of the original implementation, but use the class, method and overload you were given, not these names:
+```javascript
+function hex(b){var s='';for(var i=0;i<b.length;i++){s+=('0'+(b[i]&0xff).toString(16)).slice(-2);}return s;}
+Java.perform(function () {
+  var C = Java.use("com.example.Foo");
+  C.bar.overload('java.lang.String').implementation = function () {
+    console.log("HS|" + JSON.stringify({event: "call"}));
+    try { for (var i = 0; i < arguments.length; i++) { var a = arguments[i]; if (a !== null && a !== undefined) { var s = String(a); if (/^[a-z][a-z0-9+.-]*:\/\//i.test(s)) { console.log("HS|" + JSON.stringify({event: "url", url: s})); } } } } catch (e) {}
+    var r = this.bar.apply(this, arguments);
+    try { if (r !== null && r !== undefined) { var rs = String(r); if (/^[a-z][a-z0-9+.-]*:\/\//i.test(rs)) { console.log("HS|" + JSON.stringify({event: "url", url: rs})); } } } catch (e) {}
+    return r;
+  };
+  console.log("HS|" + JSON.stringify({event: "ready"}));
+});
+```

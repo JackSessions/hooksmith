@@ -1,0 +1,29 @@
+{
+  "run_id": "run-20261006-053110",
+  "started": "2026-10-06T05:31:10+00:00",
+  "tool": "hooksmith 0.1.0",
+  "python": "3.11.16",
+  "package": "com.hooksmith.vulnlab",
+  "apk": {
+    "name": "vulnlab.apk",
+    "sha256": "e5c453e9787f688ade9b4e937e81b6770032683c9b274f726e246af9db84362c"
+  },
+  "provider": "template",
+  "model": "template",
+  "temperature": 0.0,
+  "prompt_hash": "f1a6742eda3e",
+  "device": {
+    "executor": "adb",
+    "serial": "10.11.1.1:5001",
+    "model": "Corellium Generic",
+    "android": "16",
+    "sdk": "36",
+    "abi": "arm64-v8a",
+    "rooted": true,
+    "frida": "17.22.2"
+  },
+  "timeout_s": 45,
+  "findings": 7,
+  "finished": "2026-10-06T05:33:32+00:00",
+  "seconds": 112.2
+}

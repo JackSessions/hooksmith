@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"hostname","host":"wrong.host.badssl.com","result":true,"cert_matches":false}
+HS|{"event":"call"}
+HS|{"event":"hostname","host":"wrong.host.badssl.com","result":true,"cert_matches":false}

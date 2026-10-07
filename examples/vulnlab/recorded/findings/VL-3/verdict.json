@@ -1,0 +1,7 @@
+{
+  "verdict": "UNREACHABLE",
+  "reason": "hook attached but the target method never fired on the exercised paths",
+  "signal": {
+    "events": 1
+  }
+}

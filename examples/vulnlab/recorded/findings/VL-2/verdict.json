@@ -1,0 +1,13 @@
+{
+  "verdict": "REFUTED",
+  "reason": "key value differs across calls (4 distinct values): derived, not hardcoded",
+  "signal": {
+    "observed_keys": [
+      "2a43809b8fe43107f96c49cd3a7fa589",
+      "3b7d326cdc6c692dddbfb26d5971ea4f",
+      "964ce60d8000ba39615283e82da281b8",
+      "98f528f27942398508deef00b51938bb"
+    ],
+    "calls": 4
+  }
+}

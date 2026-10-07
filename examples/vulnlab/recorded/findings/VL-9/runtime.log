@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"tls_chain","accepted":false,"subject":"CN=*.badssl.com,OU=PositiveSSL Wildcard,OU=Domain Control Validated","issuer":"CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB","self_signed":false,"expired":true,"chain_len":3}
+HS|{"event":"call"}
+HS|{"event":"tls_chain","accepted":false,"subject":"CN=*.badssl.com,OU=PositiveSSL Wildcard,OU=Domain Control Validated","issuer":"CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB","self_signed":false,"expired":true,"chain_len":3}

@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1","algorithm":"AES"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f","algorithm":"AES"}

@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"random","impl":"java.util.Random","context":"pickConfettiColor"}
+HS|{"event":"call"}
+HS|{"event":"random","impl":"java.util.Random","context":"pickConfettiColor"}

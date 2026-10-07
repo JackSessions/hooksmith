@@ -1,0 +1,11 @@
+{
+  "verdict": "REFUTED",
+  "reason": "rejected a hostname the certificate does not cover",
+  "signal": {
+    "checks": 2,
+    "mismatched_hosts": 2,
+    "hosts": [
+      "wrong.host.badssl.com"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+Target class: {{class_name}}
+Target method: {{method}}
+{{overload_line}}
+Finding: {{title}}
+
+{{type_guidance}}
+
+Decompiled source of the target method (and the class constants it uses):
+```java
+{{source}}
+```
+{{feedback}}
+Write the Frida hook now. Output only JavaScript.

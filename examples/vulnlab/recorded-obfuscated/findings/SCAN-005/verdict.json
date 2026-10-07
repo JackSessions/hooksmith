@@ -1,0 +1,10 @@
+{
+  "verdict": "REFUTED",
+  "reason": "rejected a certificate chain: validation is in place",
+  "signal": {
+    "chains": 2,
+    "accepted_invalid": 0,
+    "rejected": 2,
+    "example": "CN=*.badssl.com,OU=PositiveSSL Wildcard,OU=Domain Control Validated"
+  }
+}

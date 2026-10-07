@@ -1,0 +1,38 @@
+Finding type: TLS trust manager that does not validate certificate chains.
+Claim to test: the target method (an X509TrustManager.checkServerTrusted implementation) accepts certificate chains it should reject.
+Evidence to log: whether the original call returned normally (accepted) or threw (rejected), plus facts about the leaf certificate. Call the original inside try/catch, and log exactly one event per call:
+    console.log("HS|" + JSON.stringify({event: "tls_chain", accepted: true|false, subject: ..., issuer: ..., self_signed: ..., expired: ...}));
+Read the leaf with Java.cast(chain[0], Java.use("java.security.cert.X509Certificate")); self_signed means subject equals issuer; expired is true when leaf.checkValidity() throws. If the original threw, log accepted:false and RETHROW the same exception. Never swallow it. checkServerTrusted may have several overloads: hook the one you are given.
+
+Example of a CORRECT hook for a DIFFERENT class (com.example.Foo.checkServerTrusted). Copy its structure, its logging protocol and its use of the original implementation, but use the class, method and overload you were given, not these names:
+```javascript
+function tlsInfo(chain, accepted) {
+  var o = {event: "tls_chain", accepted: accepted};
+  try {
+    var leaf = Java.cast(chain[0], Java.use("java.security.cert.X509Certificate"));
+    o.subject = String(leaf.getSubjectDN().getName()).slice(0, 120);
+    o.issuer = String(leaf.getIssuerDN().getName()).slice(0, 120);
+    o.self_signed = o.subject === o.issuer;
+    try { leaf.checkValidity(); o.expired = false; } catch (e) { o.expired = true; }
+    o.chain_len = chain.length;
+  } catch (e) { o.err = String(e).slice(0, 120); }
+  return o;
+}
+function hex(b){var s='';for(var i=0;i<b.length;i++){s+=('0'+(b[i]&0xff).toString(16)).slice(-2);}return s;}
+Java.perform(function () {
+  var C = Java.use("com.example.Foo");
+  C.checkServerTrusted.overload('[Ljava.security.cert.X509Certificate;', 'java.lang.String').implementation = function () {
+    console.log("HS|" + JSON.stringify({event: "call"}));
+    var r;
+    try {
+      r = this.checkServerTrusted.apply(this, arguments);
+    } catch (e) {
+      try { console.log("HS|" + JSON.stringify(tlsInfo(arguments[0], false))); } catch (x) {}
+      throw e;
+    }
+    try { console.log("HS|" + JSON.stringify(tlsInfo(arguments[0], true))); } catch (x) {}
+    return r;
+  };
+  console.log("HS|" + JSON.stringify({event: "ready"}));
+});
+```

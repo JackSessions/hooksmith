@@ -1,0 +1,15 @@
+{
+  "findings": [
+    {
+      "id": "SCAN-001",
+      "title": "Possible hardcoded cryptographic key",
+      "type": "hardcoded_key",
+      "severity": "high",
+      "description": "Pattern match in sg/vantagepoint/a/a.java; confirm at runtime before reporting.",
+      "class": "sg.vantagepoint.a.a",
+      "method": "a",
+      "file": "sg/vantagepoint/a/a.java",
+      "source": "hooksmith-scan"
+    }
+  ]
+}

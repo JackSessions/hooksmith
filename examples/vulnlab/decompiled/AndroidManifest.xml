@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:compileSdkVersion="33"
+    android:compileSdkVersionCodename="13"
+    package="com.hooksmith.vulnlab"
+    platformBuildVersionCode="33"
+    platformBuildVersionName="13">
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="33"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:label="HookSmith VulnLab"
+        android:debuggable="true"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.hooksmith.vulnlab.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="vulnlab"
+                    android:host="open"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

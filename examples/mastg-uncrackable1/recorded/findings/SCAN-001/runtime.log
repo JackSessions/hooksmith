@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"key","hex":"8d127684cbc37c17616d806cf50473cc","via":"argument"}
+HS|{"event":"key","hex":"e5426215cb5b9a06c3a0b5e6a4bd769a49e8f074f82eff1d95ab7c17147618e7","via":"argument"}
+HS|{"event":"key","hex":"8d127684cbc37c17616d806cf50473cc","algorithm":"AES/ECB/PKCS7Padding"}

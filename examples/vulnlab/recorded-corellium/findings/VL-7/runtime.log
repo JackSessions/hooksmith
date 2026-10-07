@@ -1,0 +1,5 @@
+HS|{"event":"ready"}
+HS|{"event":"call"}
+HS|{"event":"url","url":"https://example.com/"}
+HS|{"event":"call"}
+HS|{"event":"url","url":"https://example.com/"}
